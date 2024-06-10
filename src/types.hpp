@@ -25,6 +25,10 @@ private:
 struct PathNode {
     size_t x; 
     size_t y; 
+
+    bool operator==(const PathNode &other) const {
+        return x == other.x && y == other.y;
+    }
 };
 
 /**
