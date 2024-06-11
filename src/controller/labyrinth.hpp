@@ -10,7 +10,7 @@
 template<size_t S>
 class Labyrinth {
 public: 
-    Labyrinth(const std::array<bool, S * S> &labyrinth) constexpr
+    Labyrinth(const std::array<bool, S * S> &labyrinth)
         : m_cells(labyrinth)
 {
 };
@@ -20,12 +20,12 @@ public:
         return m_cells[y * S + x];
     } 
 
-    size_t getSize() constexpr 
+    size_t getSize() const 
     {
         return S;
     };
 
 private: 
-    std::array<bool, S> m_cells = {};
+    std::array<bool, S * S> m_cells = {};
 }; 
 
