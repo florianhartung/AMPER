@@ -2,7 +2,8 @@
 
 #include <iostream>
 #include <tuple>
-#include "types.hpp"
+#include "labyrinth.hpp"
+#include "path.hpp"
 
 /**
  * @brief Finds the shortest path from the start position to the target position in the labyrinth.
