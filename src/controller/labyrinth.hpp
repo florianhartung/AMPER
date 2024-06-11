@@ -26,6 +26,6 @@ public:
     };
 
 private: 
-    std::array<bool, LABYRINTH_SIZE * LABYRINTH_SIZE> m_cells = {};
+    std::array<bool, S> m_cells = {};
 }; 
 

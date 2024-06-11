@@ -91,4 +91,3 @@ Path findPath(const Labyrinth<S> &labyrinth, const std::tuple<size_t, size_t> &s
     return {};
 }
 
-#include "path_finding.tpp"
