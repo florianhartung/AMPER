@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "path_finding.hpp"
+#include "const_labyrinth.hpp"
 
 
 const std::tuple<size_t, size_t> START_POS(0, 0);
