@@ -1,17 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <array>
-
-const static Labyrinth labyrinth ({
-    false, false, true, false,
-    false, true, true, false,
-    false, false, true, false,
-    false, false, true, false,
-});  
-
-constexpr size_t LABYRINTH_SIZE = 4;
-
 /**
  * @brief datatype for the labyrinth
  * holds an array of bools (true: block, false: air)
