@@ -1,3 +1,43 @@
+array = [
+  [False, False, False, False, False, False, False, False, False, False, False, False],
+  [False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True,  False],
+  [False, True,  False, False, False, False, True,  True,  False, False, True,  False],
+  [False, True,  True,  True,  True,  False, True,  True,  True,  False, True,  False],
+  [False, True,  True,  False, True,  False, True,  False, False, False, True,  False],
+  [False, True,  False, False, True,  False, True,  True,  True,  True, True,   False],
+  [False, False, False, False, True,  True,  True,  True,  True,  False, True,  False],
+  [False, True,  True,  False, True,  False, False, False, True,  False, True,  False],
+  [False, True,  True,  True,  True,  True,  True,  True,  False, False, False, False],
+  [False, False, False, True,  True,  True,  True,  True,  False, True,  True,  False],
+  [False, True,  True,  True,  True,  False, True,  True,  False, False, True,  False],
+  [False, False, False, False, False, False, False, False, False, False, False, False]]
+
+
+#######################################################################################################
+
+header = """#pragma once
+#include <array>
+#include "labyrinth.hpp"
+
+const static Labyrinth<%d> LABYRINTH ({
+
+""" % len(array)
+
+for line in array:
+  header += "\t"
+  for i, element in enumerate(line):
+      if element is False:
+        header += "false, "
+      else:
+        header += "true, "
+  header += "\n"      
+
+header = header[:-3] + "\n});\n" # header[-3] to remove last comma and line break
+
+with open('../src/controller/const_labyrinth.hpp', 'w') as f1:
+  f1.write(header)
+
+
 head = """<sdf version='1.7'>
   <world name='default'>
     <light name='sun' type='directional'>
@@ -120,21 +160,6 @@ tail = """<light name='sun'>
   </world>
 </sdf>"""
 
-
-array = [
-  [False, False, False, False, False, False, False, False, False, False, False, False],
-  [False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True,  False],
-  [False, True,  False, False, False, False, True,  True,  False, False, True,  False],
-  [False, True,  True,  True,  True,  False, True,  True,  True,  False, True,  False],
-  [False, True,  True,  False, True,  False, True,  False, False, False, True,  False],
-  [False, True,  False, False, True,  False, True,  True,  True,  True, True,   False],
-  [False, False, False, False, True,  True,  True,  True,  True,  False, True,  False],
-  [False, True,  True,  False, True,  False, False, False, True,  False, True,  False],
-  [False, True,  True,  True,  True,  True,  True,  True,  False, False, False, False],
-  [False, False, False, True,  True,  True,  True,  True,  False, True,  True,  False],
-  [False, True,  True,  True,  True,  False, True,  True,  False, False, True,  False],
-  [False, False, False, False, False, False, False, False, False, False, False, False]]
-
 k = 0
 x = 0.5
 y = 0.5
@@ -208,5 +233,5 @@ for i, line in enumerate(array):
           </model>\n"""
           k += 1
 
-with open('../urdf/labyrinth.xml', 'w+') as f:
-  f.write(head+middle1+middle+middle2+tail)
+with open('../urdf/labyrinth.xml', 'w+') as f2:
+  f2.write(head+middle1+middle+middle2+tail)

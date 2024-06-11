@@ -2,11 +2,18 @@
 #include <array>
 #include "labyrinth.hpp"
 
-const static Labyrinth LABYRINTH ({
-                                          false, false, true, false,
-                                          false, true, true, false,
-                                          false, false, true, false,
-                                          false, false, true, false,
-                                  });
+const static Labyrinth<12> LABYRINTH ({
 
-constexpr size_t LABYRINTH_SIZE = 4;
+	false, false, false, false, false, false, false, false, false, false, false, false, 
+	false, true, true, true, true, true, true, true, true, true, true, false, 
+	false, true, false, false, false, false, true, true, false, false, true, false, 
+	false, true, true, true, true, false, true, true, true, false, true, false, 
+	false, true, true, false, true, false, true, false, false, false, true, false, 
+	false, true, false, false, true, false, true, true, true, true, true, false, 
+	false, false, false, false, true, true, true, true, true, false, true, false, 
+	false, true, true, false, true, false, false, false, true, false, true, false, 
+	false, true, true, true, true, true, true, true, false, false, false, false, 
+	false, false, false, true, true, true, true, true, false, true, true, false, 
+	false, true, true, true, true, false, true, true, false, false, true, false, 
+	false, false, false, false, false, false, false, false, false, false, false, false
+});
