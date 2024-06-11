@@ -9,7 +9,7 @@
     <arg name="urdf_file" default="$(find AMPER)/urdf/robot.urdf" />
 
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf_file)" />
-    <node name="robot_control" pkg="robot_description" type="robot_control" output="screen" />
+    <node name="robot_control" pkg="AMPER" type="navigator" output="screen" />
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
         <param name="use_gui" value="false" />
     </node>

@@ -10,11 +10,14 @@ project(AMPER)
 find_package(catkin REQUIRED COMPONENTS
         roscpp
         geometry_msgs
+        actionlib
         nav_msgs
         std_msgs
+        genmsg
+        actionlib_msgs
 )
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system thread)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -60,16 +63,16 @@ find_package(catkin REQUIRED COMPONENTS
 #   Service2.srv
 # )
 
-## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
-#   Action2.action
-# )
+## Generate action in the 'action' folder
+add_action_files(
+   FILES
+   MoveForward.action
+   TurnRight.action
+)
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
-   DEPENDENCIES geometry_msgs nav_msgs std_msgs  # Or other packages containing msgs
+   DEPENDENCIES geometry_msgs nav_msgs std_msgs actionlib_msgs  # Or other packages containing msgs
 )
 
 ################################################
@@ -104,8 +107,8 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES AMPER
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
+   CATKIN_DEPENDS roscpp geometry_msgs nav_msgs std_msgs genmsg actionlib_msgs
+   DEPENDS Boost
 )
 
 ###########
@@ -115,9 +118,9 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
-    ${catkin_INCLUDE_DIRS}
+        include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS}
 )
+
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -132,7 +135,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(robot_control src/navigation/robot_control.cpp)
+add_executable(navigator src/navigation/navigator.cpp)
 add_executable(robot_controller src/controller/robot_controller.cpp src/controller/path.cpp src/controller/path_finding.cpp)
 
 ## Rename C++ executable without prefix
@@ -146,13 +149,17 @@ add_executable(robot_controller src/controller/robot_controller.cpp src/controll
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(robot_control
+target_link_libraries(navigator
    ${catkin_LIBRARIES}
  )
+
+add_dependencies(navigator ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 
 target_link_libraries(robot_controller
    ${catkin_LIBRARIES}
  )
+add_dependencies(robot_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 #############
 ## Install ##

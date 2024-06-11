@@ -1,0 +1,9 @@
+# Goal
+float32 degrees
+---
+# Result
+bool is_finished
+---
+# Feedback
+float32 angular_distance
+bool is_finished
