@@ -6,7 +6,7 @@
     <arg name="pitch" default="0"/>
     <arg name="yaw" default="0"/>
     <arg name="robot_name" default="simple_robot"/>
-    <arg name="urdf_file" default="$(find robot_description)/urdf/robot.urdf" />
+    <arg name="urdf_file" default="$(find AMPER)/urdf/robot.urdf" />
 
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf_file)" />
     <node name="robot_control" pkg="robot_description" type="robot_control" output="screen" />
@@ -16,12 +16,12 @@
 
     <!-- Spawn My Robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-            args="-urdf -param robot_description -model simple_robot
+            args="-urdf -param AMPER -model simple_robot
                         -x $(arg x) -y $(arg y) -z $(arg z)
                         -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_description)/rviz/robot.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find AMPER)/rviz/robot.rviz" />
 
     <!-- Launch Gazebo World -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
