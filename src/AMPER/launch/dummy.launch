@@ -5,18 +5,17 @@
     <arg name="roll" default="0"/>
     <arg name="pitch" default="0"/>
     <arg name="yaw" default="0"/>
-    <arg name="robot_name" default="simple_robot"/>
     <arg name="urdf_file" default="$(find AMPER)/urdf/robot.urdf" />
 
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf_file)" />
-    <node name="robot_control" pkg="AMPER" type="navigator" output="screen" />
+
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
         <param name="use_gui" value="false" />
     </node>
 
     <!-- Spawn My Robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-            args="-urdf -param AMPER -model simple_robot
+            args="-urdf -param robot_description -model smaller_simple_robot
                         -x $(arg x) -y $(arg y) -z $(arg z)
                         -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
@@ -30,4 +29,7 @@
             <arg name="debug" value="false"/>
             <arg name="gui" value="true" />
     </include>
+
+    <node name="navigator" pkg="AMPER" type="navigator" output="screen" />
+
 </launch>
