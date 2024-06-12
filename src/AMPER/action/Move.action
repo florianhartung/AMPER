@@ -1,0 +1,11 @@
+# Goal
+bool is_turn_action # if true, angle needs to be set, else distance needs to be set
+float32 distance
+float32 angle
+---
+# Result
+bool success
+---
+# Feedback
+float32 distance_moved
+float32 angle_rotated

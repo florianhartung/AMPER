@@ -66,8 +66,7 @@ find_package(Boost REQUIRED COMPONENTS system thread)
 ## Generate action in the 'action' folder
 add_action_files(
    FILES
-   MoveForward.action
-   TurnRight.action
+   Move.action
 )
 
 ## Generate added messages and services with any dependencies listed here
