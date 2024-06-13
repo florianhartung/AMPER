@@ -64,11 +64,11 @@ public:
 
     Navigator(): moveServer(nh, "MoveServer", false)
     {
-
         moveServer.registerGoalCallback(boost::bind(&Navigator::moveGoalCB, this));
+        moveServer.registerPreemptCallback(boost::bind(&Navigator::preemptGoalCB, this));
         moveServer.start();
         cmdVelPub = nh.advertise<geometry_msgs::Twist>("/AMPER/navigation/cmd_vel", 10);
-        pidControlTimer = nh.createTimer(ros::Duration(1.0 / 60), &Navigator::pidControlCallback, this);
+        pidControlTimer = nh.createTimer(ros::Duration(1.0 / 100.0), &Navigator::pidControlCallback, this);
         odomSub = nh.subscribe("/AMPER/navigation/odom", 10, &Navigator::odomCallback, this);
         currentState = IDLE;
     }
@@ -88,6 +88,12 @@ public:
             goalPos = currentPos.addDistance(goal.distance);
             currentState = MOVING_FORWARD;
         }
+    }
+
+    void preemptGoalCB() {
+        reset();
+        ROS_INFO("Cancel request for goal received, preempting goal!");
+        moveServer.setPreempted();
     }
 
     void reset() {
@@ -164,7 +170,7 @@ public:
 
     void pidControlCallback(const ros::TimerEvent &event) {
         if (!moveServer.isActive()) {
-            ROS_INFO("WAITING FOR GOAL...");
+            // ROS_INFO("WAITING FOR GOAL...");
             return;
         }
 
