@@ -31,5 +31,7 @@
     </include>
 
     <node name="navigator" pkg="AMPER" type="navigator" output="screen" />
+    <node name="robot_controller" pkg="AMPER" type="robot_controller" output="screen" />
+
 
 </launch>
