@@ -14,3 +14,8 @@ PathNode Path::popNode()
     m_nodes.pop_front();  
     return node;
 }
+
+size_t Path::size()
+{
+    return m_nodes.size();
+}

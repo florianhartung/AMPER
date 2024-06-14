@@ -26,6 +26,8 @@ public:
     // the first node will be removed and returned 
     PathNode popNode(); 
 
+    size_t size();
+
 private: 
     std::deque<PathNode> m_nodes {}; 
 
