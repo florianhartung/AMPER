@@ -44,9 +44,9 @@ public:
         return Vector3(newX, newY, angle);
     }
 
-    Vector3 setAngle(double new_angle) {
-
-        return Vector3(x, y, new_angle);
+    Vector3 addAngle(double angle) {
+        double newAngle = getAngle() + angle;
+        return Vector3(x, y, newAngle);
     }
 
     double lengthPos() {
@@ -75,13 +75,24 @@ public:
 
 
     void moveGoalCB() {
+        ros::Rate loop_rate(100);
         ROS_INFO("Goal Received!");
         AMPER::MoveGoal goal = *moveServer.acceptNewGoal();
+
+        // Waits till current position is known
+        // It's a little hack
+        while (currentPos.getX() == -100000000.0) {
+            loop_rate.sleep();
+            ros::spinOnce();
+        }
+        ROS_INFO("Position received! Calculating goal position!");
+
+        // Calculates new goal position
         if (goal.is_turn_action) {
             // translate angle to standard definition angle
             double angle = PI * goal.angle / 180.0;
 
-            goalPos = currentPos.setAngle(angle);
+            goalPos = currentPos.addAngle(angle);
 
             currentState = TURNING;
         } else {
@@ -98,7 +109,6 @@ public:
 
     void reset() {
         geometry_msgs::Twist emptyCmdMsg;
-
         currentState = IDLE;
         errorIntegral = 0.0;
         prevError = 0.0;
@@ -118,24 +128,29 @@ public:
 
     double getAngleDist(double a1, double a2) {
         double diff = a1 - a2;
-        diff = 180.0 * diff / PI;
+        diff = 180.0 * diff / PI;   // rad2deg
         diff = std::fmod((diff + 180.0), 360.0) - 180.0;
-        return PI * diff / 180.0;
+        return PI * diff / 180.0; // deg2rad
     }
 
     void turn(double dt) {
-        //ROS_INFO("TURNING");
+        ROS_INFO("currentAngle %f goalAngle %f", currentPos.getAngle(), goalPos.getAngle());
         geometry_msgs::Twist cmdMsg;
         double desiredAngle = goalPos.getAngle();
         double angleDistance = getAngleDist(desiredAngle, currentPos.getAngle());
 
         int sign = angleDistance > 0 ? 1 : -1;
-        double angularVelocity = sign * std::min(maxAngularVel, angleDistance);
+
+        double absAngleDistance = std::abs(angleDistance);
+        double angularVelocity = sign * std::min(maxAngularVel, absAngleDistance);
+
+        ROS_INFO("TURNING with angular velocity %f", angularVelocity);
+        ROS_INFO("remaining angleDistance %f", angleDistance);
 
         cmdMsg.angular.z = angularVelocity;
 
-        feedback.angle_rotated = angleDistance;
-        feedback.distance_moved = 0;
+        feedback.angle_remaining = angleDistance;
+        feedback.distance_remaining = 0;
         moveServer.publishFeedback(feedback);
 
         cmdVelPub.publish(cmdMsg);
@@ -161,7 +176,7 @@ public:
 
         cmdMsg.linear.x = velocity;
 
-        feedback.distance_moved = distanceRemaining;
+        feedback.distance_remaining = distanceRemaining;
         moveServer.publishFeedback(feedback);
 
         cmdVelPub.publish(cmdMsg);
@@ -176,11 +191,12 @@ public:
 
         double time = event.current_real.toSec();
         double dt = time - lastTime;
-        lastTime = time;
 
         if (lastTime == 0)  {
+            lastTime = time;
             return;
         }
+        lastTime = time;
 
         geometry_msgs::Twist emptyCmdMsg;
 
@@ -236,7 +252,7 @@ protected:
     actionlib::SimpleActionServer<AMPER::MoveAction> moveServer;
 
 private:
-    Vector3 currentPos{0.0, 0.0, 0.0};
+    Vector3 currentPos{-100000000.0, -100000000.0, -100000000.0};
     Vector3 goalPos{0.0, 0.0, 0.0};
 
     // Velocity limits

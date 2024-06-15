@@ -7,5 +7,5 @@ float32 angle
 bool success
 ---
 # Feedback
-float32 distance_moved
-float32 angle_rotated
+float32 distance_remaining
+float32 angle_remaining
