@@ -23,12 +23,9 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find AMPER)/rviz/robot.rviz" />
 
     <!-- Launch Gazebo World -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-            <arg name="use_sim_time" value="true"/>
-            <arg name="verbose" value="false"/>
-            <arg name="debug" value="false"/>
-            <arg name="gui" value="true" />
-    </include>
+    <arg name="world_file" default="$(find AMPER)/urdf/labyrinth.xml"/>
+    <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg world_file)"/>
+
 
     <node name="navigator" pkg="AMPER" type="navigator" output="screen" />
     <node name="robot_controller" pkg="AMPER" type="robot_controller" output="screen" />
