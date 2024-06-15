@@ -1,3 +1,9 @@
+import os
+
+file_path = os.path.dirname(os.path.dirname(__file__)) # == src/AMPER
+hpp_path = os.path.join(file_path, 'src/controller/const_labyrinth.hpp') # == src/AMPER/src/controller/const_labyrinth.hpp
+world_path = os.path.join(file_path, 'urdf/labyrinth.xml')
+
 array = [
   [False, False, False, False, False, False, False, False, False, False, False, False],
   [False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True,  False],
@@ -34,12 +40,13 @@ for line in array:
 
 header = header[:-3] + "\n});\n" # header[-3] to remove last comma and line break
 
-with open('../src/controller/const_labyrinth.hpp', 'w') as f1:
+
+with open(hpp_path, 'w') as f1:
   f1.write(header)
 
 
 head = """<sdf version='1.7'>
-  <world name='default'>
+  <world name='labyrinth'>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -129,7 +136,7 @@ head = """<sdf version='1.7'>
     </spherical_coordinates>
 """
 
-middle = """<state world_name='default'>
+middle = """<state world_name='labyrinth'>
       <sim_time>1887 266000000</sim_time>
       <real_time>2747 188788856</real_time>
       <wall_time>1718021803 799918533</wall_time>
@@ -233,5 +240,5 @@ for i, line in enumerate(array):
           </model>\n"""
           k += 1
 
-with open('../urdf/labyrinth.xml', 'w+') as f2:
+with open(world_path, 'w') as f2:
   f2.write(head+middle1+middle+middle2+tail)

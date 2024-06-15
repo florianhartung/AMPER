@@ -1,5 +1,5 @@
 <sdf version='1.7'>
-  <world name='default'>
+  <world name='labyrinth'>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -4299,7 +4299,7 @@
               <kinematic>0</kinematic>
             </link>
           </model>
-<state world_name='default'>
+<state world_name='labyrinth'>
       <sim_time>1887 266000000</sim_time>
       <real_time>2747 188788856</real_time>
       <wall_time>1718021803 799918533</wall_time>
