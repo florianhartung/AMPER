@@ -176,6 +176,7 @@ for i, line in enumerate(array):
     for j, element in enumerate(line):
         if element is False:
           middle1 += f"""\n<model name='unit_box_{k}'>
+          <static>1</static>
           <pose>{x + j} {y + i} 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>

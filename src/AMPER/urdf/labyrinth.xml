@@ -89,6 +89,7 @@
     </spherical_coordinates>
 
 <model name='unit_box_0'>
+          <static>1</static>
           <pose>0.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -143,6 +144,7 @@
           </model>
 
 <model name='unit_box_1'>
+          <static>1</static>
           <pose>1.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -197,6 +199,7 @@
           </model>
 
 <model name='unit_box_2'>
+          <static>1</static>
           <pose>2.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -251,6 +254,7 @@
           </model>
 
 <model name='unit_box_3'>
+          <static>1</static>
           <pose>3.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -305,6 +309,7 @@
           </model>
 
 <model name='unit_box_4'>
+          <static>1</static>
           <pose>4.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -359,6 +364,7 @@
           </model>
 
 <model name='unit_box_5'>
+          <static>1</static>
           <pose>5.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -413,6 +419,7 @@
           </model>
 
 <model name='unit_box_6'>
+          <static>1</static>
           <pose>6.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -467,6 +474,7 @@
           </model>
 
 <model name='unit_box_7'>
+          <static>1</static>
           <pose>7.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -521,6 +529,7 @@
           </model>
 
 <model name='unit_box_8'>
+          <static>1</static>
           <pose>8.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -575,6 +584,7 @@
           </model>
 
 <model name='unit_box_9'>
+          <static>1</static>
           <pose>9.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -629,6 +639,7 @@
           </model>
 
 <model name='unit_box_10'>
+          <static>1</static>
           <pose>10.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -683,6 +694,7 @@
           </model>
 
 <model name='unit_box_11'>
+          <static>1</static>
           <pose>11.5 0.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -737,6 +749,7 @@
           </model>
 
 <model name='unit_box_12'>
+          <static>1</static>
           <pose>0.5 1.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -791,6 +804,7 @@
           </model>
 
 <model name='unit_box_13'>
+          <static>1</static>
           <pose>11.5 1.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -845,6 +859,7 @@
           </model>
 
 <model name='unit_box_14'>
+          <static>1</static>
           <pose>0.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -899,6 +914,7 @@
           </model>
 
 <model name='unit_box_15'>
+          <static>1</static>
           <pose>2.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -953,6 +969,7 @@
           </model>
 
 <model name='unit_box_16'>
+          <static>1</static>
           <pose>3.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1007,6 +1024,7 @@
           </model>
 
 <model name='unit_box_17'>
+          <static>1</static>
           <pose>4.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1061,6 +1079,7 @@
           </model>
 
 <model name='unit_box_18'>
+          <static>1</static>
           <pose>5.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1115,6 +1134,7 @@
           </model>
 
 <model name='unit_box_19'>
+          <static>1</static>
           <pose>8.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1169,6 +1189,7 @@
           </model>
 
 <model name='unit_box_20'>
+          <static>1</static>
           <pose>9.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1223,6 +1244,7 @@
           </model>
 
 <model name='unit_box_21'>
+          <static>1</static>
           <pose>11.5 2.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1277,6 +1299,7 @@
           </model>
 
 <model name='unit_box_22'>
+          <static>1</static>
           <pose>0.5 3.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1331,6 +1354,7 @@
           </model>
 
 <model name='unit_box_23'>
+          <static>1</static>
           <pose>5.5 3.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1385,6 +1409,7 @@
           </model>
 
 <model name='unit_box_24'>
+          <static>1</static>
           <pose>9.5 3.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1439,6 +1464,7 @@
           </model>
 
 <model name='unit_box_25'>
+          <static>1</static>
           <pose>11.5 3.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1493,6 +1519,7 @@
           </model>
 
 <model name='unit_box_26'>
+          <static>1</static>
           <pose>0.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1547,6 +1574,7 @@
           </model>
 
 <model name='unit_box_27'>
+          <static>1</static>
           <pose>3.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1601,6 +1629,7 @@
           </model>
 
 <model name='unit_box_28'>
+          <static>1</static>
           <pose>5.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1655,6 +1684,7 @@
           </model>
 
 <model name='unit_box_29'>
+          <static>1</static>
           <pose>7.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1709,6 +1739,7 @@
           </model>
 
 <model name='unit_box_30'>
+          <static>1</static>
           <pose>8.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1763,6 +1794,7 @@
           </model>
 
 <model name='unit_box_31'>
+          <static>1</static>
           <pose>9.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1817,6 +1849,7 @@
           </model>
 
 <model name='unit_box_32'>
+          <static>1</static>
           <pose>11.5 4.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1871,6 +1904,7 @@
           </model>
 
 <model name='unit_box_33'>
+          <static>1</static>
           <pose>0.5 5.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1925,6 +1959,7 @@
           </model>
 
 <model name='unit_box_34'>
+          <static>1</static>
           <pose>2.5 5.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -1979,6 +2014,7 @@
           </model>
 
 <model name='unit_box_35'>
+          <static>1</static>
           <pose>3.5 5.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2033,6 +2069,7 @@
           </model>
 
 <model name='unit_box_36'>
+          <static>1</static>
           <pose>5.5 5.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2087,6 +2124,7 @@
           </model>
 
 <model name='unit_box_37'>
+          <static>1</static>
           <pose>11.5 5.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2141,6 +2179,7 @@
           </model>
 
 <model name='unit_box_38'>
+          <static>1</static>
           <pose>0.5 6.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2195,6 +2234,7 @@
           </model>
 
 <model name='unit_box_39'>
+          <static>1</static>
           <pose>1.5 6.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2249,6 +2289,7 @@
           </model>
 
 <model name='unit_box_40'>
+          <static>1</static>
           <pose>2.5 6.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2303,6 +2344,7 @@
           </model>
 
 <model name='unit_box_41'>
+          <static>1</static>
           <pose>3.5 6.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2357,6 +2399,7 @@
           </model>
 
 <model name='unit_box_42'>
+          <static>1</static>
           <pose>9.5 6.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2411,6 +2454,7 @@
           </model>
 
 <model name='unit_box_43'>
+          <static>1</static>
           <pose>11.5 6.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2465,6 +2509,7 @@
           </model>
 
 <model name='unit_box_44'>
+          <static>1</static>
           <pose>0.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2519,6 +2564,7 @@
           </model>
 
 <model name='unit_box_45'>
+          <static>1</static>
           <pose>3.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2573,6 +2619,7 @@
           </model>
 
 <model name='unit_box_46'>
+          <static>1</static>
           <pose>5.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2627,6 +2674,7 @@
           </model>
 
 <model name='unit_box_47'>
+          <static>1</static>
           <pose>6.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2681,6 +2729,7 @@
           </model>
 
 <model name='unit_box_48'>
+          <static>1</static>
           <pose>7.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2735,6 +2784,7 @@
           </model>
 
 <model name='unit_box_49'>
+          <static>1</static>
           <pose>9.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2789,6 +2839,7 @@
           </model>
 
 <model name='unit_box_50'>
+          <static>1</static>
           <pose>11.5 7.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2843,6 +2894,7 @@
           </model>
 
 <model name='unit_box_51'>
+          <static>1</static>
           <pose>0.5 8.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2897,6 +2949,7 @@
           </model>
 
 <model name='unit_box_52'>
+          <static>1</static>
           <pose>8.5 8.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -2951,6 +3004,7 @@
           </model>
 
 <model name='unit_box_53'>
+          <static>1</static>
           <pose>9.5 8.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3005,6 +3059,7 @@
           </model>
 
 <model name='unit_box_54'>
+          <static>1</static>
           <pose>10.5 8.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3059,6 +3114,7 @@
           </model>
 
 <model name='unit_box_55'>
+          <static>1</static>
           <pose>11.5 8.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3113,6 +3169,7 @@
           </model>
 
 <model name='unit_box_56'>
+          <static>1</static>
           <pose>0.5 9.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3167,6 +3224,7 @@
           </model>
 
 <model name='unit_box_57'>
+          <static>1</static>
           <pose>1.5 9.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3221,6 +3279,7 @@
           </model>
 
 <model name='unit_box_58'>
+          <static>1</static>
           <pose>2.5 9.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3275,6 +3334,7 @@
           </model>
 
 <model name='unit_box_59'>
+          <static>1</static>
           <pose>8.5 9.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3329,6 +3389,7 @@
           </model>
 
 <model name='unit_box_60'>
+          <static>1</static>
           <pose>11.5 9.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3383,6 +3444,7 @@
           </model>
 
 <model name='unit_box_61'>
+          <static>1</static>
           <pose>0.5 10.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3437,6 +3499,7 @@
           </model>
 
 <model name='unit_box_62'>
+          <static>1</static>
           <pose>5.5 10.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3491,6 +3554,7 @@
           </model>
 
 <model name='unit_box_63'>
+          <static>1</static>
           <pose>8.5 10.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3545,6 +3609,7 @@
           </model>
 
 <model name='unit_box_64'>
+          <static>1</static>
           <pose>9.5 10.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3599,6 +3664,7 @@
           </model>
 
 <model name='unit_box_65'>
+          <static>1</static>
           <pose>11.5 10.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3653,6 +3719,7 @@
           </model>
 
 <model name='unit_box_66'>
+          <static>1</static>
           <pose>0.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3707,6 +3774,7 @@
           </model>
 
 <model name='unit_box_67'>
+          <static>1</static>
           <pose>1.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3761,6 +3829,7 @@
           </model>
 
 <model name='unit_box_68'>
+          <static>1</static>
           <pose>2.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3815,6 +3884,7 @@
           </model>
 
 <model name='unit_box_69'>
+          <static>1</static>
           <pose>3.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3869,6 +3939,7 @@
           </model>
 
 <model name='unit_box_70'>
+          <static>1</static>
           <pose>4.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3923,6 +3994,7 @@
           </model>
 
 <model name='unit_box_71'>
+          <static>1</static>
           <pose>5.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -3977,6 +4049,7 @@
           </model>
 
 <model name='unit_box_72'>
+          <static>1</static>
           <pose>6.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -4031,6 +4104,7 @@
           </model>
 
 <model name='unit_box_73'>
+          <static>1</static>
           <pose>7.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -4085,6 +4159,7 @@
           </model>
 
 <model name='unit_box_74'>
+          <static>1</static>
           <pose>8.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -4139,6 +4214,7 @@
           </model>
 
 <model name='unit_box_75'>
+          <static>1</static>
           <pose>9.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -4193,6 +4269,7 @@
           </model>
 
 <model name='unit_box_76'>
+          <static>1</static>
           <pose>10.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
@@ -4247,6 +4324,7 @@
           </model>
 
 <model name='unit_box_77'>
+          <static>1</static>
           <pose>11.5 11.5 0.5 0 -0 0</pose>
           <link name='link'>
             <inertial>
