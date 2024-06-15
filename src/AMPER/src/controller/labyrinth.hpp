@@ -4,7 +4,7 @@
 
 /**
  * @brief datatype for the labyrinth
- * holds an array of bools (true: block, false: air)
+ * holds an array of bools (true: air, false: block)
  * the array holds 2d map, column first
 */
 template<size_t S>

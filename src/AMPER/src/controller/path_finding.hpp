@@ -70,7 +70,7 @@ Path findPath(const Labyrinth<S> &labyrinth, const std::tuple<size_t, size_t> &s
                 // if neighbor is air && inside the maze
                 const int newX = static_cast<int>(node.x) + dx;
                 const int newY = static_cast<int>(node.y) + dy;
-                if ( isInsideMaze( newX, newY, S ) && isDirectNeighbor( dx, dy ) && !labyrinth.get( newX, newY ))
+                if ( isInsideMaze( newX, newY, S ) && isDirectNeighbor( dx, dy ) && labyrinth.get( newX, newY ))
                 {
                     PathNode nodeToFind{};
                     nodeToFind.x = newX;
@@ -87,7 +87,7 @@ Path findPath(const Labyrinth<S> &labyrinth, const std::tuple<size_t, size_t> &s
             }
         }
     }
-    std::cerr << "There is no possible path for this maze." << std::endl;
-    return {};
+
+    throw std::runtime_error("There is no possible path for this maze.");
 }
 
