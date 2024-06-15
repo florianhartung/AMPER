@@ -5,8 +5,8 @@
 #include "actionlib/client/simple_action_client.h"
 
 
-const std::tuple<size_t, size_t> START_POS(1, 1);
-const std::tuple<size_t, size_t> END_POS(8, 3);
+const std::tuple<size_t, size_t> START_POS(10, 1);
+const std::tuple<size_t, size_t> END_POS(2, 7);
 
 void sendMoveGoal(actionlib::SimpleActionClient<AMPER::MoveAction>& client, AMPER::MoveGoal goal) {
     std::stringstream ss;
@@ -71,7 +71,13 @@ void turnToDirection(actionlib::SimpleActionClient<AMPER::MoveAction>& client, D
     } else if (static_cast<Direction>(currentDirection == (targetDirection + 1) % 4)) {
         turn(client, true); // turn left
     } else {
-        throw new std::runtime_error("Cannot make U-turn");
+	// u turn
+        AMPER::MoveGoal goal;
+        goal.is_turn_action = true;
+        goal.distance = 0.0;
+        goal.angle = 180.0;
+
+	sendMoveGoal(client, goal);
     }
 }
 
