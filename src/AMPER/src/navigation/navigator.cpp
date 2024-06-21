@@ -14,7 +14,7 @@ private:
     double angle;
 public:
     Vector3(double x, double y, double angle):
-            x(x), y(y), angle(angle)
+            x(x), y(y), angle(std::fmod((angle + 2*3.14159), 2*3.14159)) // makes sure that angle stays between 0-2Pi
     {
 
     }
