@@ -59,6 +59,7 @@ public:
     enum robotState {
         TURNING,
         MOVING_FORWARD,
+        CORRECTING,
         IDLE
     };
 
@@ -85,20 +86,24 @@ public:
             loop_rate.sleep();
             ros::spinOnce();
         }
-        ROS_INFO("Position received! Calculating goal position!");
-
+        // if goalPos has not been set, then set it to current position
+        if (goalPos.getX() == -100000000.0) {
+            ROS_INFO("Position received! Calculating goal position!");
+            goalPos = Vector3{currentPos.getX(), currentPos.getY(), currentPos.getAngle()};
+        }
+        ROS_INFO("Calculating goal position!");
         // Calculates new goal position
         if (goal.is_turn_action) {
             // translate angle to standard definition angle
             double angle = PI * goal.angle / 180.0;
 
-            goalPos = currentPos.addAngle(angle);
-
+            goalPos = goalPos.addAngle(angle);
             currentState = TURNING;
         } else {
-            goalPos = currentPos.addDistance(goal.distance);
+            goalPos = goalPos.addDistance(goal.distance);
             currentState = MOVING_FORWARD;
         }
+        ROS_INFO("New goal: (%f, %f) with angle %f", goalPos.getX(), goalPos.getY(), goalPos.getAngle());
     }
 
     void preemptGoalCB() {
@@ -133,16 +138,36 @@ public:
         return PI * diff / 180.0; // deg2rad
     }
 
-    void turn(double dt) {
-        ROS_INFO("currentAngle %f goalAngle %f", currentPos.getAngle(), goalPos.getAngle());
+    double getCorrectAngle() {
+        Vector3 subVec = goalPos.subtractPos(currentPos);
+
+        double dx = subVec.getX();
+        double dy = subVec.getY();
+
+        double angle = std::atan2(dy, dx);
+
+        if (angle < 0) {
+            angle += 2 * PI;    // turn to positive angle
+        }
+
+        return angle;
+    }
+
+    bool checkForCorrection() {
+        double angle = getCorrectAngle();
+
+        return std::abs(getAngleDist(angle, currentPos.getAngle())) > 5 * (PI / 180);
+    }
+
+    void turn(double desiredAngle) {
+        ROS_INFO("currentAngle %f goalAngle %f", currentPos.getAngle(), desiredAngle);
         geometry_msgs::Twist cmdMsg;
-        double desiredAngle = goalPos.getAngle();
         double angleDistance = getAngleDist(desiredAngle, currentPos.getAngle());
 
         int sign = angleDistance > 0 ? 1 : -1;
 
         double absAngleDistance = std::abs(angleDistance);
-        double angularVelocity = sign * std::min(maxAngularVel, absAngleDistance);
+        double angularVelocity = sign * std::min(maxAngularVel, 2 * absAngleDistance);
 
         ROS_INFO("TURNING with angular velocity %f", angularVelocity);
         ROS_INFO("remaining angleDistance %f", angleDistance);
@@ -159,6 +184,7 @@ public:
     void move(double dt) {
         ROS_INFO("currentPos %f %f goalPos %f %f", currentPos.getX(), currentPos.getY(), goalPos.getX(), goalPos.getY());
         geometry_msgs::Twist cmdMsg;
+
         double distanceRemaining = getDist(goalPos, currentPos);
         ROS_INFO("dist %f", distanceRemaining);
         double pTerm = kp * distanceRemaining;
@@ -208,18 +234,37 @@ public:
                     succeedGoal();
                     break;
                 }
-                turn(dt);
+                turn(goalPos.getAngle());
                 break;
+
             case MOVING_FORWARD:
-                // checks if robot can move closer, if distance smaller than 0.01 m stops
+                // checks if the angle should be corrected to not cause too much offset
+                if (getDist(goalPos, currentPos) > 0.5 && checkForCorrection()) {
+                    currentState = CORRECTING;
+                    cmdVelPub.publish(emptyCmdMsg);
+                    break;
+                }
                 ROS_INFO("DIST %f", getDist(goalPos, currentPos));
-                if (getDist(goalPos, currentPos) < 0.01) {
+                // checks if robot can move closer, if distance smaller than 0.15 m (smaller half of robots length) stops
+                if (getDist(goalPos, currentPos) < 0.15) {
                     reset();
                     succeedGoal();
                     break;
                 }
                 move(dt);
                 break;
+
+            case CORRECTING:
+                // checks if robot can rotate closer, if angle distance smaller than 0.5 degree stops
+                ROS_INFO("CORRECTING");
+                if (!checkForCorrection()) {
+                    currentState = MOVING_FORWARD;
+                    cmdVelPub.publish(emptyCmdMsg);
+                    break;
+                }
+                turn(getCorrectAngle());
+                break;
+
             case IDLE:
                 errorIntegral = 0;
                 prevError = 0;
@@ -253,17 +298,17 @@ protected:
 
 private:
     Vector3 currentPos{-100000000.0, -100000000.0, -100000000.0};
-    Vector3 goalPos{0.0, 0.0, 0.0};
+    Vector3 goalPos{-100000000.0, -100000000.0, -100000000.0};
 
     // Velocity limits
     const double PI = 3.141592653589;
-    const double maxAngularVel = PI / 2;
+    const double maxAngularVel = PI;
     const double maxVel = 0.8;
 
     // PID control gains
-    const double kp = 0.1;
-    const double ki = 0.05;
-    const double kd = 0.05;
+    const double kp = 0.6;
+    const double ki = 0.00;
+    const double kd = 0.00;
 
     // Variables for PID control
     double errorIntegral = 0.0;
