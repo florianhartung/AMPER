@@ -31,10 +31,8 @@ def get_neighbours(coordinates, maze):
 
 def generate_maze(w: int, h: int):
     maze = init_maze(w-2, h-2)
-    print(maze)
     wall_list = []
     start_cell = (random.randint(0, w-3), random.randint(0, h-3))
-    print(start_cell)
     maze[start_cell[1]][start_cell[0]] = True
     add_walls(start_cell, wall_list, maze)
     while len(wall_list) > 0:
@@ -42,7 +40,6 @@ def generate_maze(w: int, h: int):
         neighbours = get_neighbours(random_wall, maze)
         sum_of_neighbours = 0
         for nx, ny in neighbours:
-            print(nx, ny)
             sum_of_neighbours += maze[ny][nx]
         if sum_of_neighbours == 1:
             maze[random_wall[1]][random_wall[0]] = True
