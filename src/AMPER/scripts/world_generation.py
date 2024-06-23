@@ -1,22 +1,11 @@
 import os
+import maze_gen
 
 file_path = os.path.dirname(os.path.dirname(__file__)) # == src/AMPER
 hpp_path = os.path.join(file_path, 'src/controller/const_labyrinth.hpp') # == src/AMPER/src/controller/const_labyrinth.hpp
 world_path = os.path.join(file_path, 'urdf/labyrinth.xml')
 
-array = [
-  [False, False, False, False, False, False, False, False, False, False, False, False],
-  [False, True,  True,  True,  True,  True,  True,  True,  True,  True,  True,  False],
-  [False, True,  False, False, False, False, True,  True,  False, False, True,  False],
-  [False, True,  True,  True,  True,  False, True,  True,  True,  False, True,  False],
-  [False, True,  True,  False, True,  False, True,  False, False, False, True,  False],
-  [False, True,  False, False, True,  False, True,  True,  True,  True, True,   False],
-  [False, False, False, False, True,  True,  True,  True,  True,  False, True,  False],
-  [False, True,  True,  False, True,  False, False, False, True,  False, True,  False],
-  [False, True,  True,  True,  True,  True,  True,  True,  False, False, False, False],
-  [False, False, False, True,  True,  True,  True,  True,  False, True,  True,  False],
-  [False, True,  True,  True,  True,  False, True,  True,  False, False, True,  False],
-  [False, False, False, False, False, False, False, False, False, False, False, False]]
+array = maze_gen.generate_maze(12, 12)
 
 
 #######################################################################################################
