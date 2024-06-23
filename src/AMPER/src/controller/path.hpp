@@ -4,10 +4,10 @@
 #include <algorithm>
 #include <array>
 #include <queue>
+#include <memory>
 
 
-struct PathNode
-{
+struct PathNode {
     size_t x;
     size_t y;
 
@@ -48,6 +48,8 @@ public:
     void pushNode( size_t x, size_t y );
     // the first node will be removed and returned
     PathNode popNode();
+    // return the first node without popping it. This may return nullptr if there is no node left
+    std::unique_ptr<PathNode> peekNode();
 
     size_t size();
 

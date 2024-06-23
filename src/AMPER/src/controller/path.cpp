@@ -15,6 +15,15 @@ PathNode Path::popNode()
     return node;
 }
 
+
+std::unique_ptr<PathNode> Path::peekNode() {
+    if (m_nodes.size() == 0) {
+        return nullptr;
+    }
+
+    return std::make_unique<PathNode>(std::move(m_nodes.front()));
+}
+
 size_t Path::size()
 {
     return m_nodes.size();

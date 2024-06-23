@@ -21,17 +21,16 @@ void sendMoveGoal(actionlib::SimpleActionClient<AMPER::MoveAction>& client, AMPE
 
     if (!finished) {
         throw std::runtime_error("Timeout during navigation server action call");
-    }
-
+    } 
     if (!client.getResult()->success) {
         throw std::runtime_error("Navigation server returned error");
     }
 }
 
-void moveForward(actionlib::SimpleActionClient<AMPER::MoveAction>& client) {
+void moveForward(actionlib::SimpleActionClient<AMPER::MoveAction>& client, float distance) {
     AMPER::MoveGoal goal;
     goal.is_turn_action = false;
-    goal.distance = 1.0;
+    goal.distance = distance;
     goal.angle = 0.0;
 
     sendMoveGoal(client, goal);
@@ -81,6 +80,24 @@ void turnToDirection(actionlib::SimpleActionClient<AMPER::MoveAction>& client, D
     }
 }
 
+Direction determine_direction(size_t fromX, size_t fromY, size_t toX, size_t toY) {
+    Direction targetDirection;
+    if (fromX == toX && fromY == toY + 1) {
+        targetDirection = Direction::Y_NEG;
+    } else if (fromX == toX && fromY + 1 == toY) {
+        targetDirection = Direction::Y_POS;
+    } else if (fromY == toY && fromX == toX + 1){
+        targetDirection = Direction::X_NEG;
+    } else if (fromY == toY && fromX + 1 == toX){
+        targetDirection = Direction::X_POS;
+    } else {
+        throw std::runtime_error("Invalid path");
+    }
+
+    return targetDirection;
+}
+
+
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "robot_controller");
@@ -114,24 +131,32 @@ int main(int argc, char** argv) {
         size_t currentX = std::get<0>(currentPosition);
         size_t currentY = std::get<1>(currentPosition);
 
-        Direction targetDirection;
-        if (currentX == next.x && currentY == next.y + 1) {
-            targetDirection = Direction::Y_NEG;
-        } else if (currentX == next.x && currentY + 1 == next.y) {
-            targetDirection = Direction::Y_POS;
-        } else if (currentY == next.y && currentX == next.x + 1){
-            targetDirection = Direction::X_NEG;
-        } else if (currentY == next.y && currentX + 1 == next.x){
-            targetDirection = Direction::X_POS;
-        } else {
-            throw std::runtime_error("Invalid path");
-        }
+        Direction targetDirection = determine_direction(currentX, currentY, next.x, next.y);
 
         turnToDirection(client, currentDirection, targetDirection);
         currentDirection = targetDirection;
 	currentPosition = {next.x, next.y};
 
-        moveForward(client);
+	// Determine the distance we can move forward in a straight line
+	float distance = 1.0;
+	std::unique_ptr<PathNode> nextNode;
+	while ((nextNode = path.peekNode()) != nullptr) {
+	    Direction nextDirection = determine_direction(
+	        std::get<0>(currentPosition),
+		std::get<1>(currentPosition),
+		nextNode->x,
+		nextNode->y
+	    );
+	    if (currentDirection != nextDirection) {
+	        break;
+	    }
+
+	    path.popNode();
+	    currentPosition = {nextNode->x, nextNode->y};
+	    distance += 1.0;
+	}
+
+        moveForward(client, distance);
     }
 
     ros::spin();
