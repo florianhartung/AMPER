@@ -54,5 +54,3 @@ def generate_maze(w: int, h: int):
     maze.append(full_wall)
     
     return maze
-
-print(generate_maze(10, 14))
