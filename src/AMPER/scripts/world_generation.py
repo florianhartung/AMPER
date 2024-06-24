@@ -3,7 +3,7 @@ import maze_gen
 
 file_path = os.path.dirname(os.path.dirname(__file__)) # == src/AMPER
 hpp_path = os.path.join(file_path, 'src/controller/const_labyrinth.hpp') # == src/AMPER/src/controller/const_labyrinth.hpp
-world_path = os.path.join(file_path, 'urdf/labyrinth.xml')
+world_path = os.path.join(file_path, 'urdf/labyrinth.world')
 
 array = maze_gen.generate_maze(12, 12)
 

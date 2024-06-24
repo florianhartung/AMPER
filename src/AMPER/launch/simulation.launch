@@ -25,7 +25,7 @@
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find AMPER)/rviz/robot.rviz" />
 
     <!-- Launch Gazebo World -->
-    <arg name="world_file" default="$(find AMPER)/urdf/labyrinth.xml"/>
+    <arg name="world_file" default="$(find AMPER)/urdf/labyrinth.world"/>
     <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg world_file)"/>
 
 
