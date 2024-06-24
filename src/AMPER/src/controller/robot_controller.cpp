@@ -5,9 +5,6 @@
 #include "actionlib/client/simple_action_client.h"
 
 
-const std::tuple<size_t, size_t> START_POS(10, 1);
-const std::tuple<size_t, size_t> END_POS(2, 7);
-
 void sendMoveGoal(actionlib::SimpleActionClient<AMPER::MoveAction>& client, AMPER::MoveGoal goal) {
     std::stringstream ss;
     ss << "Controller: Sending goal to navigation server: (is_turn=" << (goal.is_turn_action ? '1' : '0') <<", dis=" << goal.distance << ", angle=" << goal.angle << ")";
@@ -101,10 +98,44 @@ Direction determine_direction(size_t fromX, size_t fromY, size_t toX, size_t toY
 
 int main(int argc, char** argv) {
     ros::init(argc, argv, "robot_controller");
+    ros::NodeHandle nh;
     ROS_INFO("Started controller");
+
+    double start_x;
+    double start_y;
+
+    double end_x;
+    double end_y;
+
+    if (nh.hasParam("AMPER/start_x")) {
+        nh.getParam("AMPER/start_x", start_x);
+    } else {
+        ROS_ERROR("Failed to get param 'AMPER/start_x'");
+    }
+
+    if (nh.hasParam("AMPER/start_y")) {
+        nh.getParam("AMPER/start_y", start_y);
+    } else {
+        ROS_ERROR("Failed to get param 'AMPER/start_y'");
+    }
+
+    if (nh.hasParam("AMPER/end_x")) {
+        nh.getParam("AMPER/end_x", end_x);
+    } else {
+        ROS_ERROR("Failed to get param 'AMPER/end_x'");
+    }
+
+    if (nh.hasParam("AMPER/end_y")) {
+        nh.getParam("AMPER/end_y", end_y);
+    } else {
+        ROS_ERROR("Failed to get param 'AMPER/end_y'");
+    }
 
     actionlib::SimpleActionClient<AMPER::MoveAction> client("MoveServer", true);
     client.waitForServer();
+
+    const std::tuple<size_t, size_t> START_POS(static_cast<size_t>(start_x), static_cast<size_t>(start_y));
+    const std::tuple<size_t, size_t> END_POS(static_cast<size_t>(end_x), static_cast<size_t>(end_y));
 
 
     if (START_POS == END_POS) {
