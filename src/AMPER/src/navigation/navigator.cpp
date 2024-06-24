@@ -245,8 +245,8 @@ public:
                     break;
                 }
                 ROS_INFO("DIST %f", getDist(goalPos, currentPos));
-                // checks if robot can move closer, if distance smaller than 0.15 m (smaller half of robots length) stops
-                if (getDist(goalPos, currentPos) < 0.15) {
+                // checks if robot can move closer, if distance smaller than 0.10 m (smaller half of robots length) stops
+                if (getDist(goalPos, currentPos) < 0.10) {
                     reset();
                     succeedGoal();
                     break;
@@ -307,8 +307,8 @@ private:
 
     // PID control gains
     const double kp = 0.6;
-    const double ki = 0.00;
-    const double kd = 0.00;
+    const double ki = 0.05;
+    const double kd = 0.05;
 
     // Variables for PID control
     double errorIntegral = 0.0;
