@@ -44,16 +44,18 @@ print("Generated maze")
 world_generation.generate_world_file_and_hpp_file(array)
 print("Generated world file and hpp file")
 
-start_x, start_y = 0, 0
-while array[start_y][start_x] != 1:
-    start_x, start_y = random.randint(1, 10), random.randint(1, 10)
+valid_positions = [(x, y) for y in range(height) for x in range(width) if array[y][x] == 1]
+
+# Randomly select a start position from the list of valid positions
+start_x, start_y = random.choice(valid_positions)
 
 print("Start position in grid: ", start_x, start_y)
 print("Start position in gazebo: ", start_x + 0.5, start_y + 0.5)
 
-end_x, end_y = 0, 0
-while not (array[end_y][end_x] == 1 and distance((start_x, start_y), (end_x, end_y)) >= min_dist):
-    end_x, end_y = random.randint(1, 10), random.randint(1, 10)
+# Get a list of valid end positions that are at least min_dist away from the start position
+valid_end_positions = [(x, y) for x, y in valid_positions if distance((start_x, start_y), (x, y)) >= min_dist]
+
+end_x, end_y = random.choice(valid_end_positions)
 
 print("End position in grid: ", end_x, end_y)
 
