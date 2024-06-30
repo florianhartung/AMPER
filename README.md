@@ -2,30 +2,24 @@
 AMPER is a robot project in ROS.
 The robot can can navigate mazes by solving for a path, then traversing the path to the target position.
 
-## How to build and run
+## Setup
 ```sh
-source /opt/ros/noetic/setup.sh
-rm -rf build devel
-catkin_make
-source devel/setup.sh
-roslaunch AMPER simulation.launch
+chmod u+x run.sh
+chmod u+x generate_and_run.sh
+```
+## How to run
+### Monte Carlo Simulation
+It creates a new random labyrinth, sets a random start and end position, and runs the robot to solve the maze. You can set the
+size of the maze with width and height arguments and with an optional minimum distance between the start and end positions (it defaults to 5). 
+Because the minimum distance is 5, please set the width and height to at least 10.
+```sh  
+./generate_and_run.sh <width> <height> (min_diff)
+```
+### Generate random maze and set your own start and end positions
+Generate a random maze with the given width and height, look at const_labyrinth.hpp in src/AMPER/src/controller then set the start and end positions to the given coordinates.
+```sh
+python3 src/AMPER/scripts/world_generation.py <width> <height>
+./run.sh <start_x> <start_y> <end_x> <end_y>
 ```
 
-## How to generate a new labyrinth
-TODO
-
-## How to set new start and end positions
-1. Open `src/AMPER/src/controller/const_labyrinth.hpp` to view the current labyrinth. `false` means there is a solid block, `true` means a block is air and is thus viable for a start and end position.
-2. Note the new start and end indices. For example (1, 4) and (1, 1).
-3. Edit the `START_POS` and `END_POS` constants in `src/AMPER/src/controller/robot_controller.cpp`.
-4. Now set the robot starting position in the world. Do this by opening the launch configuration `src/AMPER/launch/simulation.launch`. Then edit the values of the `x` and `y` arg elements while adding an offset of 0.5 to every position like this:
-```xml
-...
-<arg name="x" default="1.5"/>
-<arg name="y" default="4.5"/>
-...
-```
-
-## Future plans
-- Use of a LIDAR sensor for navigation
-- Currently the robot can only move one block forward or turn 90 degrees at a time. In the future the robot should calculate and traverse the fastest route without making unnecessary stops.
+## How it works
