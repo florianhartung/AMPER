@@ -805,7 +805,7 @@
 
 <model name='unit_box_13'>
               <static>1</static>
-              <pose>7.5 1.5 0.5 0 -0 0</pose>
+              <pose>1.5 1.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -860,7 +860,7 @@
 
 <model name='unit_box_14'>
               <static>1</static>
-              <pose>11.5 1.5 0.5 0 -0 0</pose>
+              <pose>3.5 1.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -915,7 +915,7 @@
 
 <model name='unit_box_15'>
               <static>1</static>
-              <pose>0.5 2.5 0.5 0 -0 0</pose>
+              <pose>5.5 1.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -970,7 +970,7 @@
 
 <model name='unit_box_16'>
               <static>1</static>
-              <pose>2.5 2.5 0.5 0 -0 0</pose>
+              <pose>7.5 1.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1025,7 +1025,7 @@
 
 <model name='unit_box_17'>
               <static>1</static>
-              <pose>4.5 2.5 0.5 0 -0 0</pose>
+              <pose>11.5 1.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1080,7 +1080,7 @@
 
 <model name='unit_box_18'>
               <static>1</static>
-              <pose>6.5 2.5 0.5 0 -0 0</pose>
+              <pose>0.5 2.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1135,7 +1135,7 @@
 
 <model name='unit_box_19'>
               <static>1</static>
-              <pose>8.5 2.5 0.5 0 -0 0</pose>
+              <pose>3.5 2.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1190,7 +1190,7 @@
 
 <model name='unit_box_20'>
               <static>1</static>
-              <pose>10.5 2.5 0.5 0 -0 0</pose>
+              <pose>9.5 2.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1245,7 +1245,7 @@
 
 <model name='unit_box_21'>
               <static>1</static>
-              <pose>11.5 2.5 0.5 0 -0 0</pose>
+              <pose>10.5 2.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1300,7 +1300,7 @@
 
 <model name='unit_box_22'>
               <static>1</static>
-              <pose>0.5 3.5 0.5 0 -0 0</pose>
+              <pose>11.5 2.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1355,7 +1355,7 @@
 
 <model name='unit_box_23'>
               <static>1</static>
-              <pose>3.5 3.5 0.5 0 -0 0</pose>
+              <pose>0.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1410,7 +1410,7 @@
 
 <model name='unit_box_24'>
               <static>1</static>
-              <pose>4.5 3.5 0.5 0 -0 0</pose>
+              <pose>1.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1465,7 +1465,7 @@
 
 <model name='unit_box_25'>
               <static>1</static>
-              <pose>8.5 3.5 0.5 0 -0 0</pose>
+              <pose>4.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1520,7 +1520,7 @@
 
 <model name='unit_box_26'>
               <static>1</static>
-              <pose>11.5 3.5 0.5 0 -0 0</pose>
+              <pose>6.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1575,7 +1575,7 @@
 
 <model name='unit_box_27'>
               <static>1</static>
-              <pose>0.5 4.5 0.5 0 -0 0</pose>
+              <pose>8.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1630,7 +1630,7 @@
 
 <model name='unit_box_28'>
               <static>1</static>
-              <pose>2.5 4.5 0.5 0 -0 0</pose>
+              <pose>9.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1685,7 +1685,7 @@
 
 <model name='unit_box_29'>
               <static>1</static>
-              <pose>5.5 4.5 0.5 0 -0 0</pose>
+              <pose>11.5 3.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1740,7 +1740,7 @@
 
 <model name='unit_box_30'>
               <static>1</static>
-              <pose>7.5 4.5 0.5 0 -0 0</pose>
+              <pose>0.5 4.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1795,7 +1795,7 @@
 
 <model name='unit_box_31'>
               <static>1</static>
-              <pose>10.5 4.5 0.5 0 -0 0</pose>
+              <pose>2.5 4.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1850,7 +1850,7 @@
 
 <model name='unit_box_32'>
               <static>1</static>
-              <pose>11.5 4.5 0.5 0 -0 0</pose>
+              <pose>7.5 4.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1905,7 +1905,7 @@
 
 <model name='unit_box_33'>
               <static>1</static>
-              <pose>0.5 5.5 0.5 0 -0 0</pose>
+              <pose>11.5 4.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -1960,7 +1960,7 @@
 
 <model name='unit_box_34'>
               <static>1</static>
-              <pose>1.5 5.5 0.5 0 -0 0</pose>
+              <pose>0.5 5.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2070,7 +2070,7 @@
 
 <model name='unit_box_36'>
               <static>1</static>
-              <pose>5.5 5.5 0.5 0 -0 0</pose>
+              <pose>4.5 5.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2125,7 +2125,7 @@
 
 <model name='unit_box_37'>
               <static>1</static>
-              <pose>7.5 5.5 0.5 0 -0 0</pose>
+              <pose>5.5 5.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2235,7 +2235,7 @@
 
 <model name='unit_box_39'>
               <static>1</static>
-              <pose>11.5 5.5 0.5 0 -0 0</pose>
+              <pose>10.5 5.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2290,7 +2290,7 @@
 
 <model name='unit_box_40'>
               <static>1</static>
-              <pose>0.5 6.5 0.5 0 -0 0</pose>
+              <pose>11.5 5.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2345,7 +2345,7 @@
 
 <model name='unit_box_41'>
               <static>1</static>
-              <pose>10.5 6.5 0.5 0 -0 0</pose>
+              <pose>0.5 6.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2400,7 +2400,7 @@
 
 <model name='unit_box_42'>
               <static>1</static>
-              <pose>11.5 6.5 0.5 0 -0 0</pose>
+              <pose>2.5 6.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2455,7 +2455,7 @@
 
 <model name='unit_box_43'>
               <static>1</static>
-              <pose>0.5 7.5 0.5 0 -0 0</pose>
+              <pose>6.5 6.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2510,7 +2510,7 @@
 
 <model name='unit_box_44'>
               <static>1</static>
-              <pose>1.5 7.5 0.5 0 -0 0</pose>
+              <pose>11.5 6.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2565,7 +2565,7 @@
 
 <model name='unit_box_45'>
               <static>1</static>
-              <pose>3.5 7.5 0.5 0 -0 0</pose>
+              <pose>0.5 7.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2675,7 +2675,7 @@
 
 <model name='unit_box_47'>
               <static>1</static>
-              <pose>6.5 7.5 0.5 0 -0 0</pose>
+              <pose>8.5 7.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -2730,7 +2730,7 @@
 
 <model name='unit_box_48'>
               <static>1</static>
-              <pose>8.5 7.5 0.5 0 -0 0</pose>
+              <pose>10.5 7.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3005,7 +3005,7 @@
 
 <model name='unit_box_53'>
               <static>1</static>
-              <pose>4.5 8.5 0.5 0 -0 0</pose>
+              <pose>5.5 8.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3170,7 +3170,7 @@
 
 <model name='unit_box_56'>
               <static>1</static>
-              <pose>10.5 8.5 0.5 0 -0 0</pose>
+              <pose>11.5 8.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3225,7 +3225,7 @@
 
 <model name='unit_box_57'>
               <static>1</static>
-              <pose>11.5 8.5 0.5 0 -0 0</pose>
+              <pose>0.5 9.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3280,7 +3280,7 @@
 
 <model name='unit_box_58'>
               <static>1</static>
-              <pose>0.5 9.5 0.5 0 -0 0</pose>
+              <pose>4.5 9.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3335,7 +3335,7 @@
 
 <model name='unit_box_59'>
               <static>1</static>
-              <pose>1.5 9.5 0.5 0 -0 0</pose>
+              <pose>5.5 9.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3390,7 +3390,7 @@
 
 <model name='unit_box_60'>
               <static>1</static>
-              <pose>6.5 9.5 0.5 0 -0 0</pose>
+              <pose>9.5 9.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3445,7 +3445,7 @@
 
 <model name='unit_box_61'>
               <static>1</static>
-              <pose>7.5 9.5 0.5 0 -0 0</pose>
+              <pose>10.5 9.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3610,7 +3610,7 @@
 
 <model name='unit_box_64'>
               <static>1</static>
-              <pose>3.5 10.5 0.5 0 -0 0</pose>
+              <pose>1.5 10.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3665,7 +3665,7 @@
 
 <model name='unit_box_65'>
               <static>1</static>
-              <pose>5.5 10.5 0.5 0 -0 0</pose>
+              <pose>3.5 10.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -3720,7 +3720,7 @@
 
 <model name='unit_box_66'>
               <static>1</static>
-              <pose>9.5 10.5 0.5 0 -0 0</pose>
+              <pose>7.5 10.5 0.5 0 -0 0</pose>
               <link name='link'>
                 <inertial>
                   <mass>1</mass>
@@ -4647,6 +4647,39 @@
               </model>
 
 <model name='unit_box_13'>
+              <pose>1.5 1.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>1.5 1.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_14'>
+              <pose>3.5 1.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>3.5 1.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_15'>
+              <pose>5.5 1.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>5.5 1.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_16'>
               <pose>7.5 1.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4657,7 +4690,7 @@
               </link>
               </model>
 
-<model name='unit_box_14'>
+<model name='unit_box_17'>
               <pose>11.5 1.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4668,7 +4701,7 @@
               </link>
               </model>
 
-<model name='unit_box_15'>
+<model name='unit_box_18'>
               <pose>0.5 2.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4679,44 +4712,11 @@
               </link>
               </model>
 
-<model name='unit_box_16'>
-              <pose>2.5 2.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>2.5 2.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_17'>
-              <pose>4.5 2.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>4.5 2.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_18'>
-              <pose>6.5 2.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>6.5 2.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
 <model name='unit_box_19'>
-              <pose>8.5 2.5 0.5 0 -0 0</pose>
+              <pose>3.5 2.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>8.5 2.5 0.5 0 -0 0</pose>
+                  <pose>3.5 2.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -4724,6 +4724,17 @@
               </model>
 
 <model name='unit_box_20'>
+              <pose>9.5 2.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>9.5 2.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_21'>
               <pose>10.5 2.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4734,7 +4745,7 @@
               </link>
               </model>
 
-<model name='unit_box_21'>
+<model name='unit_box_22'>
               <pose>11.5 2.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4745,7 +4756,7 @@
               </link>
               </model>
 
-<model name='unit_box_22'>
+<model name='unit_box_23'>
               <pose>0.5 3.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4756,18 +4767,18 @@
               </link>
               </model>
 
-<model name='unit_box_23'>
-              <pose>3.5 3.5 0.5 0 -0 0</pose>
+<model name='unit_box_24'>
+              <pose>1.5 3.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>3.5 3.5 0.5 0 -0 0</pose>
+                  <pose>1.5 3.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
               </link>
               </model>
 
-<model name='unit_box_24'>
+<model name='unit_box_25'>
               <pose>4.5 3.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4778,7 +4789,18 @@
               </link>
               </model>
 
-<model name='unit_box_25'>
+<model name='unit_box_26'>
+              <pose>6.5 3.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>6.5 3.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_27'>
               <pose>8.5 3.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4789,7 +4811,18 @@
               </link>
               </model>
 
-<model name='unit_box_26'>
+<model name='unit_box_28'>
+              <pose>9.5 3.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>9.5 3.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_29'>
               <pose>11.5 3.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4800,7 +4833,7 @@
               </link>
               </model>
 
-<model name='unit_box_27'>
+<model name='unit_box_30'>
               <pose>0.5 4.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4811,7 +4844,7 @@
               </link>
               </model>
 
-<model name='unit_box_28'>
+<model name='unit_box_31'>
               <pose>2.5 4.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4822,18 +4855,7 @@
               </link>
               </model>
 
-<model name='unit_box_29'>
-              <pose>5.5 4.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>5.5 4.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_30'>
+<model name='unit_box_32'>
               <pose>7.5 4.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4844,18 +4866,7 @@
               </link>
               </model>
 
-<model name='unit_box_31'>
-              <pose>10.5 4.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>10.5 4.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_32'>
+<model name='unit_box_33'>
               <pose>11.5 4.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4866,22 +4877,11 @@
               </link>
               </model>
 
-<model name='unit_box_33'>
+<model name='unit_box_34'>
               <pose>0.5 5.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
                   <pose>0.5 5.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_34'>
-              <pose>1.5 5.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>1.5 5.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -4900,10 +4900,10 @@
               </model>
 
 <model name='unit_box_36'>
-              <pose>5.5 5.5 0.5 0 -0 0</pose>
+              <pose>4.5 5.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>5.5 5.5 0.5 0 -0 0</pose>
+                  <pose>4.5 5.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -4911,10 +4911,10 @@
               </model>
 
 <model name='unit_box_37'>
-              <pose>7.5 5.5 0.5 0 -0 0</pose>
+              <pose>5.5 5.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>7.5 5.5 0.5 0 -0 0</pose>
+                  <pose>5.5 5.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -4933,6 +4933,17 @@
               </model>
 
 <model name='unit_box_39'>
+              <pose>10.5 5.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>10.5 5.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_40'>
               <pose>11.5 5.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4943,7 +4954,7 @@
               </link>
               </model>
 
-<model name='unit_box_40'>
+<model name='unit_box_41'>
               <pose>0.5 6.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4954,18 +4965,29 @@
               </link>
               </model>
 
-<model name='unit_box_41'>
-              <pose>10.5 6.5 0.5 0 -0 0</pose>
+<model name='unit_box_42'>
+              <pose>2.5 6.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>10.5 6.5 0.5 0 -0 0</pose>
+                  <pose>2.5 6.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
               </link>
               </model>
 
-<model name='unit_box_42'>
+<model name='unit_box_43'>
+              <pose>6.5 6.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>6.5 6.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_44'>
               <pose>11.5 6.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -4976,33 +4998,11 @@
               </link>
               </model>
 
-<model name='unit_box_43'>
+<model name='unit_box_45'>
               <pose>0.5 7.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
                   <pose>0.5 7.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_44'>
-              <pose>1.5 7.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>1.5 7.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_45'>
-              <pose>3.5 7.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>3.5 7.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5021,10 +5021,10 @@
               </model>
 
 <model name='unit_box_47'>
-              <pose>6.5 7.5 0.5 0 -0 0</pose>
+              <pose>8.5 7.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>6.5 7.5 0.5 0 -0 0</pose>
+                  <pose>8.5 7.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5032,10 +5032,10 @@
               </model>
 
 <model name='unit_box_48'>
-              <pose>8.5 7.5 0.5 0 -0 0</pose>
+              <pose>10.5 7.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>8.5 7.5 0.5 0 -0 0</pose>
+                  <pose>10.5 7.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5087,10 +5087,10 @@
               </model>
 
 <model name='unit_box_53'>
-              <pose>4.5 8.5 0.5 0 -0 0</pose>
+              <pose>5.5 8.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>4.5 8.5 0.5 0 -0 0</pose>
+                  <pose>5.5 8.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5120,17 +5120,6 @@
               </model>
 
 <model name='unit_box_56'>
-              <pose>10.5 8.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>10.5 8.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
-<model name='unit_box_57'>
               <pose>11.5 8.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -5141,7 +5130,7 @@
               </link>
               </model>
 
-<model name='unit_box_58'>
+<model name='unit_box_57'>
               <pose>0.5 9.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -5152,11 +5141,22 @@
               </link>
               </model>
 
-<model name='unit_box_59'>
-              <pose>1.5 9.5 0.5 0 -0 0</pose>
+<model name='unit_box_58'>
+              <pose>4.5 9.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>1.5 9.5 0.5 0 -0 0</pose>
+                  <pose>4.5 9.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_59'>
+              <pose>5.5 9.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>5.5 9.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5164,10 +5164,10 @@
               </model>
 
 <model name='unit_box_60'>
-              <pose>6.5 9.5 0.5 0 -0 0</pose>
+              <pose>9.5 9.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>6.5 9.5 0.5 0 -0 0</pose>
+                  <pose>9.5 9.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5175,10 +5175,10 @@
               </model>
 
 <model name='unit_box_61'>
-              <pose>7.5 9.5 0.5 0 -0 0</pose>
+              <pose>10.5 9.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>7.5 9.5 0.5 0 -0 0</pose>
+                  <pose>10.5 9.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
@@ -5208,6 +5208,17 @@
               </model>
 
 <model name='unit_box_64'>
+              <pose>1.5 10.5 0.5 0 -0 0</pose>
+              <scale>1 1 1</scale>
+              <link name='link'>
+                  <pose>1.5 10.5 0.5 0 -0 0</pose>
+                  <velocity>0 0 0 0 -0 0</velocity>
+                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
+              </link>
+              </model>
+
+<model name='unit_box_65'>
               <pose>3.5 10.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
@@ -5218,22 +5229,11 @@
               </link>
               </model>
 
-<model name='unit_box_65'>
-              <pose>5.5 10.5 0.5 0 -0 0</pose>
-              <scale>1 1 1</scale>
-              <link name='link'>
-                  <pose>5.5 10.5 0.5 0 -0 0</pose>
-                  <velocity>0 0 0 0 -0 0</velocity>
-                  <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
-                  <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
-              </link>
-              </model>
-
 <model name='unit_box_66'>
-              <pose>9.5 10.5 0.5 0 -0 0</pose>
+              <pose>7.5 10.5 0.5 0 -0 0</pose>
               <scale>1 1 1</scale>
               <link name='link'>
-                  <pose>9.5 10.5 0.5 0 -0 0</pose>
+                  <pose>7.5 10.5 0.5 0 -0 0</pose>
                   <velocity>0 0 0 0 -0 0</velocity>
                   <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
                   <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
