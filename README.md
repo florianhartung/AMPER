@@ -7,6 +7,7 @@ catkin_make
 chmod u+x run.sh
 chmod u+x generate_and_run.sh
 source devel/setup.bash
+pip3 install pyyaml
 ```
 ## How to run
 ### Monte Carlo Simulation
