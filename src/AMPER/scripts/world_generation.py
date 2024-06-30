@@ -217,7 +217,7 @@ def generate_world_file(array):
                     </geometry>
                     <material>
                       <script>
-                        <name>Gazebo/Grey</name>
+                        <name>Gazebo/DarkGrey</name>
                         <uri>file://media/materials/scripts/gazebo.material</uri>
                       </script>
                     </material>
