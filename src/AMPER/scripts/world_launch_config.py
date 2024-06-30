@@ -52,7 +52,7 @@ print("Start position in grid: ", start_x, start_y)
 print("Start position in gazebo: ", start_x + 0.5, start_y + 0.5)
 
 end_x, end_y = 0, 0
-while not (array[end_y][end_x] == 1 and distance((start_x, start_y), (end_x, end_y)) < min_dist):
+while not (array[end_y][end_x] == 1 and distance((start_x, start_y), (end_x, end_y)) > min_dist):
     end_x, end_y = random.randint(1, 10), random.randint(1, 10)
 
 print("End position in grid: ", end_x, end_y)
