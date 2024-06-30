@@ -6,11 +6,11 @@ file_path = os.path.dirname(os.path.dirname(__file__)) # == src/AMPER
 hpp_path = os.path.join(file_path, 'src/controller/const_labyrinth.hpp') # == src/AMPER/src/controller/const_labyrinth.hpp
 world_path = os.path.join(file_path, 'world/labyrinth.world')
 
-#######################################################################################################
-
 def generate_world_file_and_hpp_file(array):
     generate_hpp_file(array)
     generate_world_file(array)
+
+#######################################################################################################
 
 
 # Generate hpp file

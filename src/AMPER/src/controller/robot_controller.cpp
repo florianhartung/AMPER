@@ -4,7 +4,7 @@
 #include "AMPER/MoveAction.h"
 #include "actionlib/client/simple_action_client.h"
 
-
+// Send a goal to the navigation server and wait for the result
 void sendMoveGoal(actionlib::SimpleActionClient<AMPER::MoveAction>& client, AMPER::MoveGoal goal) {
     //
     std::stringstream ss;
@@ -25,6 +25,7 @@ void sendMoveGoal(actionlib::SimpleActionClient<AMPER::MoveAction>& client, AMPE
     }
 }
 
+// Move the robot forward by distance, set is_turn_action to false
 void moveForward(actionlib::SimpleActionClient<AMPER::MoveAction>& client, float distance) {
     AMPER::MoveGoal goal;
     goal.is_turn_action = false;
@@ -49,6 +50,7 @@ void turn(actionlib::SimpleActionClient<AMPER::MoveAction>& client, bool left) {
     sendMoveGoal(client, goal);
 }
 
+// Enum for the direction of the robot
 enum Direction {
     X_POS = 0,
     Y_NEG = 1,
@@ -56,6 +58,7 @@ enum Direction {
     Y_POS = 3,
 };
 
+// Turn the robot to the target direction
 void turnToDirection(actionlib::SimpleActionClient<AMPER::MoveAction>& client, Direction currentDirection, Direction targetDirection) {
     if (currentDirection == targetDirection) {
         return;
@@ -76,6 +79,7 @@ void turnToDirection(actionlib::SimpleActionClient<AMPER::MoveAction>& client, D
     }
 }
 
+// Determine the direction from one point to another
 Direction determine_direction(size_t fromX, size_t fromY, size_t toX, size_t toY) {
     Direction targetDirection;
     if (fromX == toX && fromY == toY + 1) {
@@ -100,6 +104,7 @@ int main(int argc, char** argv) {
     ros::NodeHandle nh;
     ROS_INFO("Started controller");
 
+    // Get start and end positions from the parameter server
     double start_x;
     double start_y;
 
@@ -130,6 +135,7 @@ int main(int argc, char** argv) {
         ROS_ERROR("Failed to get param 'AMPER/end_y'");
     }
 
+    // Create a client for the navigation server
     actionlib::SimpleActionClient<AMPER::MoveAction> client("MoveServer", true);
     client.waitForServer();
 
@@ -142,13 +148,17 @@ int main(int argc, char** argv) {
         return 0;
     }
 
+    // Find the path from start to end
+
     Path path = findPath(LABYRINTH, START_POS, END_POS);
 
+    // Start position
     PathNode startNode = path.popNode();
 
     std::tuple<size_t, size_t> currentPosition = {startNode.x, startNode.y};
     Direction currentDirection = Direction::X_POS;
 
+    // Move the robot along the path
     while (path.size() > 0) {
         PathNode next = path.popNode();
 

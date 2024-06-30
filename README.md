@@ -34,7 +34,7 @@ Again, please look at const_labyrinth.hpp in src/AMPER/src/controller after catk
 ## How it works
 ### System Architecture
 
-![alt text](src/AMPER/docs/figures/architecture.drawio_new.png)
+![alt text](src/AMPER/docs/figures/architecture_new2.png)
 
 ### Maze Generation
 For the maze generation, we used Prim's algorithm.

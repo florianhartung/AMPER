@@ -7,6 +7,7 @@
 #include <cmath>
 #include <iostream>
 
+// Class for 2D vector with angle
 class Vector3 {
 private:
     double x;
