@@ -18,13 +18,19 @@ Because the minimum distance is 5, please set the width and height to at least 1
 ./generate_and_run.sh <width> <height> (min_diff)
 ```
 ### Generate random maze and set your own start and end positions
-Generate a random maze with the given width and height, look at const_labyrinth.hpp in src/AMPER/src/controller then set the start and end positions to the given coordinates.
+Generate a random maze with the given width and height and then set the start and end positions to the given coordinates.
+
+Please look at const_labyrinth.hpp in src/AMPER/src/controller after catkin_make to ensure start and end position make sense.
 ```sh
 python3 src/AMPER/scripts/world_generation.py <width> <height>
 catkin_make
 ./run.sh <start_x> <start_y> <end_x> <end_y>
 ```
-
+### Already generated maze and set your own start and end positions
+Again, please look at const_labyrinth.hpp in src/AMPER/src/controller after catkin_make to ensure start and end position make sense.
+```sh
+./run.sh <start_x> <start_y> <end_x> <end_y>
+```
 ## How it works
 ### System Architecture
 
