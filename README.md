@@ -49,5 +49,8 @@ Implementation can be found in src/AMPER/src/controller/pathfinding.cpp.
 For the movement we make use of ROS services.
 
 
+### Summary
+
+![alt text](src/AMPER/docs/figures/architecture.drawio.png)
 
 Implementation can be found in src/AMPER/src/controller/robot_controller.cpp and src/AMPER/src/navigation/navigator.cpp.
