@@ -23,3 +23,19 @@ python3 src/AMPER/scripts/world_generation.py <width> <height>
 ```
 
 ## How it works
+### Maze Generation
+For the maze generation, we used Prim's algorithm.
+1. Initialize a grid where all cells are considered as walls.
+2. Select a single cell to be the current cell and mark it as part of the maze.
+3. Add the walls of the current cell to a list of walls.
+4. Enter a loop that continues as long as there are walls in the list.
+5. Select a random wall from the list.
+6. Check the cell on the opposite side of the selected wall. If it's not part of the maze yet:
+   - Remove the selected wall.
+   - Mark the cell on the opposite side as part of the maze.
+   - Add the walls of the cell on the opposite side to the wall list.
+7. Repeat the loop (go to step 5) until there are no more walls in the list.
+8. After the loop ends, add walls around the entire perimeter of the maze to prevent the robot from going out of bounds.
+
+### Pathfinding
+For the pathfinding, we used the A* algorithm. 
