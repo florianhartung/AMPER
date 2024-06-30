@@ -243,7 +243,7 @@ def generate_world_file(array):
       f2.write(head+middle1+middle+middle2+tail)
 
 if __name__=='__main__':
-    array = maze_gen.generate_maze(sys.argv[1], sys.argv[2])
+    array = maze_gen.generate_maze(int(sys.argv[1]), int(sys.argv[2]))
     generate_world_file_and_hpp_file(array)
     print("Files generated successfully")
     print("Exiting the process ....")
