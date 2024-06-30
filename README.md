@@ -3,6 +3,7 @@ AMPER is a robot project in ROS. The robot can navigate mazes by first finding a
 
 ## Setup
 ```sh
+catkin_make
 chmod u+x run.sh
 chmod u+x generate_and_run.sh
 source devel/setup.bash
