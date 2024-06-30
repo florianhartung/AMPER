@@ -5,6 +5,7 @@ AMPER is a robot project in ROS. The robot can navigate mazes by first finding a
 ```sh
 chmod u+x run.sh
 chmod u+x generate_and_run.sh
+source devel/setup.bash
 ```
 ## How to run
 ### Monte Carlo Simulation
@@ -18,6 +19,7 @@ Because the minimum distance is 5, please set the width and height to at least 1
 Generate a random maze with the given width and height, look at const_labyrinth.hpp in src/AMPER/src/controller then set the start and end positions to the given coordinates.
 ```sh
 python3 src/AMPER/scripts/world_generation.py <width> <height>
+catkin_make
 ./run.sh <start_x> <start_y> <end_x> <end_y>
 ```
 
