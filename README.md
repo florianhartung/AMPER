@@ -1,6 +1,5 @@
-# AMPER: Autonomous Maze Pathfinding and Exploration Robot [WIP]
-AMPER is a robot project in ROS.
-The robot can can navigate mazes by solving for a path, then traversing the path to the target position.
+# AMPER: Autonomous Maze Pathfinding and Exploration Robot
+AMPER is a robot project in ROS. The robot can navigate mazes by first finding a path for a given hardcoded labyrinth, then traverse the path from its start position to the target position.
 
 ## Setup
 ```sh
@@ -37,5 +36,16 @@ For the maze generation, we used Prim's algorithm.
 7. Repeat the loop (go to step 5) until there are no more walls in the list.
 8. After the loop ends, add walls around the entire perimeter of the maze to prevent the robot from going out of bounds.
 
+The implementation was done in Python under scr/AMPER/scripts/maze_gen.py.
 ### Pathfinding
-For the pathfinding, we used the A* algorithm. 
+For the pathfinding, we used the A* algorithm. A* is a graph traversal and path search algorithm that finds the shortest path between the start node and the end node. 
+It uses a heuristic function to estimate the cost of the cheapest path through a node. 
+
+Implementation can be found in src/AMPER/src/controller/pathfinding.cpp.
+
+### Robot Movement
+For the movement we make use of ROS services.
+
+
+
+Implementation can be found in src/AMPER/src/controller/robot_controller.cpp and src/AMPER/src/navigation/navigator.cpp.
