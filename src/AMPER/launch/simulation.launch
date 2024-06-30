@@ -1,16 +1,16 @@
 <launch>
-    <arg name="start_x" default="1.5"/>
-    <arg name="start_y" default="1.5"/>
-    <arg name="end_x" default="2.5" />
-    <arg name="end_y" default="7.5" />
+    <arg name="start_x" default="1"/>
+    <arg name="start_y" default="1"/>
+    <arg name="end_x" default="2" />
+    <arg name="end_y" default="7" />
 
     <arg name="urdf_file" default="$(find AMPER)/urdf/robot.urdf" />
 
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdf_file)" />
-    <param name="AMPER/start_x" value = "$(arg start_x)" type="double" />
-    <param name="AMPER/start_y" value = "$(arg start_y)" type="double" />
-    <param name="AMPER/end_x"  value = "$(arg end_x)" type="double" />
-    <param name="AMPER/end_y"  value = "$(arg end_y)" type="double" />
+    <param name="AMPER/start_x" value = "$(arg start_x)" type="int" />
+    <param name="AMPER/start_y" value = "$(arg start_y)" type="int" />
+    <param name="AMPER/end_x"  value = "$(arg end_x)" type="int" />
+    <param name="AMPER/end_y"  value = "$(arg end_y)" type="int" />
 
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
         <param name="use_gui" value="false" />
@@ -19,15 +19,14 @@
     <!-- Spawn My Robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
             args="-urdf -param robot_description -model smaller_simple_robot
-                        -x $(arg start_x) -y $(arg start_y)"/>
+                        -x $(arg start_x).5 -y $(arg start_y).5"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find AMPER)/rviz/robot.rviz" />
 
     <!-- Launch Gazebo World -->
-    <arg name="world_file" default="$(find AMPER)/urdf/labyrinth.world"/>
+    <arg name="world_file" default="$(find AMPER)/world/labyrinth.world"/>
     <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg world_file)"/>
-
 
     <node name="navigator" pkg="AMPER" type="navigator" output="screen" />
     <node name="robot_controller" pkg="AMPER" type="robot_controller" output="screen" />

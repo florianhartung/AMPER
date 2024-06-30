@@ -160,17 +160,30 @@ public:
     }
 
     void turn(double desiredAngle) {
-        ROS_INFO("currentAngle %f goalAngle %f", currentPos.getAngle(), desiredAngle);
+        //ROS_INFO("currentAngle %f goalAngle %f", currentPos.getAngle(), desiredAngle);
         geometry_msgs::Twist cmdMsg;
         double angleDistance = getAngleDist(desiredAngle, currentPos.getAngle());
 
-        int sign = angleDistance > 0 ? 1 : -1;
-
         double absAngleDistance = std::abs(angleDistance);
-        double angularVelocity = sign * std::min(maxAngularVel, 2 * absAngleDistance);
 
-        ROS_INFO("TURNING with angular velocity %f", angularVelocity);
-        ROS_INFO("remaining angleDistance %f", angleDistance);
+        // Determine the direction to turn with the least angular distance
+        int sign;
+        if (std::abs(angleDistance) <= PI) {
+            sign = angleDistance > 0 ? 1 : -1;
+        } else {
+            sign = angleDistance > 0 ? -1 : 1;
+        }
+
+        // PID control
+        double pTerm = kp * absAngleDistance;
+        errorIntegral += ki * absAngleDistance;
+        double dTerm = kd * (absAngleDistance - prevError);
+        prevError = absAngleDistance;
+
+        double angularVelocity = sign * std::min(maxAngularVel, pTerm + errorIntegral + dTerm);
+
+        //ROS_INFO("TURNING with angular velocity %f", angularVelocity);
+        //ROS_INFO("remaining angleDistance %f", angleDistance);
 
         cmdMsg.angular.z = angularVelocity;
 
@@ -182,11 +195,11 @@ public:
     }
 
     void move(double dt) {
-        ROS_INFO("currentPos %f %f goalPos %f %f", currentPos.getX(), currentPos.getY(), goalPos.getX(), goalPos.getY());
+        //ROS_INFO("currentPos %f %f goalPos %f %f", currentPos.getX(), currentPos.getY(), goalPos.getX(), goalPos.getY());
         geometry_msgs::Twist cmdMsg;
 
         double distanceRemaining = getDist(goalPos, currentPos);
-        ROS_INFO("dist %f", distanceRemaining);
+        //ROS_INFO("dist %f", distanceRemaining);
         double pTerm = kp * distanceRemaining;
 
         errorIntegral += dt * distanceRemaining;
@@ -195,10 +208,10 @@ public:
 
         prevError = distanceRemaining;
 
-        ROS_INFO("pid %f", pTerm + iTerm + dTerm);
+        //ROS_INFO("pid %f", pTerm + iTerm + dTerm);
 
         double velocity = std::min(maxVel, pTerm + iTerm + dTerm);
-        ROS_INFO("velocity %f", velocity);
+        //ROS_INFO("velocity %f", velocity);
 
         cmdMsg.linear.x = velocity;
 
@@ -244,7 +257,7 @@ public:
                     cmdVelPub.publish(emptyCmdMsg);
                     break;
                 }
-                ROS_INFO("DIST %f", getDist(goalPos, currentPos));
+                //ROS_INFO("DIST %f", getDist(goalPos, currentPos));
                 // checks if robot can move closer, if distance smaller than 0.10 m (smaller half of robots length) stops
                 if (getDist(goalPos, currentPos) < 0.10) {
                     reset();
@@ -256,8 +269,9 @@ public:
 
             case CORRECTING:
                 // checks if robot can rotate closer, if angle distance smaller than 0.5 degree stops
-                ROS_INFO("CORRECTING");
+                //ROS_INFO("CORRECTING");
                 if (!checkForCorrection()) {
+                    reset();
                     currentState = MOVING_FORWARD;
                     cmdVelPub.publish(emptyCmdMsg);
                     break;
@@ -307,8 +321,8 @@ private:
 
     // PID control gains
     const double kp = 0.6;
-    const double ki = 0.05;
-    const double kd = 0.05;
+    const double ki = 0.1;
+    const double kd = 0.1;
 
     // Variables for PID control
     double errorIntegral = 0.0;

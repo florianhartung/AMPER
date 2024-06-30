@@ -6,6 +6,7 @@
 
 
 void sendMoveGoal(actionlib::SimpleActionClient<AMPER::MoveAction>& client, AMPER::MoveGoal goal) {
+    //
     std::stringstream ss;
     ss << "Controller: Sending goal to navigation server: (is_turn=" << (goal.is_turn_action ? '1' : '0') <<", dis=" << goal.distance << ", angle=" << goal.angle << ")";
     std::string s = ss.str();
@@ -59,8 +60,6 @@ void turnToDirection(actionlib::SimpleActionClient<AMPER::MoveAction>& client, D
     if (currentDirection == targetDirection) {
         return;
     }
-
-
 
     if (static_cast<Direction>((currentDirection + 1) % 4) == targetDirection) {
         turn(client, false); // turn right
@@ -166,31 +165,33 @@ int main(int argc, char** argv) {
 
         turnToDirection(client, currentDirection, targetDirection);
         currentDirection = targetDirection;
-	currentPosition = {next.x, next.y};
+        currentPosition = {next.x, next.y};
 
-	// Determine the distance we can move forward in a straight line
-	float distance = 1.0;
-	std::unique_ptr<PathNode> nextNode;
-	while ((nextNode = path.peekNode()) != nullptr) {
-	    Direction nextDirection = determine_direction(
-	        std::get<0>(currentPosition),
-		std::get<1>(currentPosition),
-		nextNode->x,
-		nextNode->y
-	    );
-	    if (currentDirection != nextDirection) {
-	        break;
-	    }
+        // Determine the distance we can move forward in a straight line
+        float distance = 1.0;
+        std::unique_ptr<PathNode> nextNode;
+        while ((nextNode = path.peekNode()) != nullptr) {
+            Direction nextDirection = determine_direction(
+                std::get<0>(currentPosition),
+            std::get<1>(currentPosition),
+            nextNode->x,
+            nextNode->y
+            );
+            if (currentDirection != nextDirection) {
+                break;
+            }
 
-	    path.popNode();
-	    currentPosition = {nextNode->x, nextNode->y};
-	    distance += 1.0;
-	}
+            path.popNode();
+            currentPosition = {nextNode->x, nextNode->y};
+            distance += 1.0;
+        }
 
         moveForward(client, distance);
     }
+    ROS_INFO("End position reached");
 
     ros::spin();
+
     return 0;
 }
 
